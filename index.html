@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canetão Pro | Escrita Forte e Durável</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
+    body { background: #f5f5f5; color: #333; }
+    header { background: #111827; color: #fff; padding: 40px 20px; text-align: center; }
+    header h1 { font-size: 2.2rem; margin-bottom: 10px; }
+    header p { font-size: 1.1rem; opacity: 0.9; }
+
+    .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+
+    .product { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+
+    .product img { width: 100%; border-radius: 12px; }
+
+    .info h2 { font-size: 1.8rem; margin-bottom: 15px; }
+    .info p { margin-bottom: 15px; line-height: 1.6; }
+
+    .features { list-style: none; margin-bottom: 20px; }
+    .features li { margin-bottom: 8px; }
+
+    .price { font-size: 2rem; font-weight: bold; color: #16a34a; margin-bottom: 10px; }
+    .installments { font-size: 0.95rem; margin-bottom: 20px; color: #555; }
+
+    .buy-btn { display: inline-block; background: #2563eb; color: #fff; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-size: 1.1rem; transition: 0.3s; }
+    .buy-btn:hover { background: #1e40af; }
+
+    .benefits { margin-top: 50px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .benefit { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+    .benefit h3 { margin-bottom: 10px; }
+
+    footer { background: #111827; color: #fff; text-align: center; padding: 25px 15px; margin-top: 60px; }
+
+    @media (max-width: 768px) {
+      .product { grid-template-columns: 1fr; }
+      header h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Canetão Pro</h1>
+    <p>Escrita marcante para quadros, cartazes e apresentações</p>
+  </header>
+
+  <main class="container">
+    <section class="product">
+      <img src="Canetao.jpg" alt="Canetão Pro" />
+      <div class="info">
+        <h2>Canetão Permanente Premium</h2>
+        <p>O <strong>Canetão Pro</strong> é ideal para professores, estudantes, profissionais e artistas que precisam de uma escrita forte, uniforme e durável.</p>
+        <ul class="features">
+          <li>✔ Ponta grossa e resistente</li>
+          <li>✔ Tinta de alta durabilidade</li>
+          <li>✔ Secagem rápida</li>
+          <li>✔ Ótimo para quadros brancos e cartazes</li>
+        </ul>
+        <div class="price">R$ 19,90</div>
+        <div class="installments">ou 3x de R$ 6,63 sem juros</div>
+        <a href="pix.html" class="buy-btn">Comprar com Pix</a>
+      </div>
+    </section>
+
+   
+
+      <h2 style="margin-bottom:15px;">Pagamento via Pix</h2>
+      <p style="margin-bottom:10px;">Use a chave Pix abaixo para realizar o pagamento:</p>
+      <p style="font-size:1.2rem; font-weight:bold; margin-bottom:15px;">📌 Chave Pix: 61985337626 <span id="pixKey"></span></p>
+      <img src="qrcode.jpeg" alt="QR Code Pix" style="max-width:220px; margin:20px 0; display:block;">
+      <button onclick="copyPix()" style="background:#16a34a; color:#fff; padding:12px 25px; border:none; border-radius:8px; font-size:1rem; cursor:pointer;">Copiar chave Pix</button>
+      <p id="msg" style="margin-top:10px; color:green;"></p>
+    </section>
+
+    <section class="benefits">
+      <div class="benefit">
+        <h3>Alta Qualidade</h3>
+        <p>Fabricado com materiais resistentes para maior vida útil.</p>
+      </div>
+      <div class="benefit">
+        <h3>Entrega Rápida</h3>
+        <p>Envio para todo o Brasil com rastreamento.</p>
+      </div>
+      <div class="benefit">
+        <h3>Garantia</h3>
+        <p>Satisfação garantida ou seu dinheiro de volta.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Canetão Pro - Todos os direitos reservados</p>
+  </footer>
+
+<script>
+  function copyPix() {
+    const key = document.getElementById('pixKey').innerText;
+    navigator.clipboard.writeText(key);
+    document.getElementById('msg').innerText = 'Chave Pix copiada com sucesso!';
+  }
+</script>
+
+</body>
+</html>

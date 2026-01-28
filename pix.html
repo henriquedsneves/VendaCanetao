@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagamento Pix - Canetão Pro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #f5f5f5;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .pix-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      max-width: 400px;
+      width: 100%;
+    }
+    img {
+      max-width: 220px;
+      margin: 20px 0;
+    }
+    button {
+      background: #16a34a;
+      color: #fff;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .msg {
+      margin-top: 10px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="pix-box">
+    <h2>Pagamento via Pix</h2>
+    <p>Escaneie o QR Code ou copie a chave Pix</p>
+
+    <img src="qrcode.jpeg" alt="QR Code Pix">
+
+    <p><strong>Chave Pix:</strong></p>
+    <p id="pixKey">123.456.789-00</p>
+
+    <button onclick="copyPix()">Copiar chave Pix</button>
+    <div class="msg" id="msg"></div>
+  </div>
+
+  <script>
+    function copyPix() {
+      const key = document.getElementById('pixKey').innerText;
+      navigator.clipboard.writeText(key);
+      document.getElementById('msg').innerText = 'Chave Pix copiada!';
+    }
+  </script>
+
+</body>
+</html>
